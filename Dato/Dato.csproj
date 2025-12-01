@@ -55,6 +55,11 @@
     <Compile Include="conductor.cs">
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Darrendador.cs" />
+    <Compile Include="Dconductor.cs" />
+    <Compile Include="Despacio.cs" />
+    <Compile Include="Dreserva.cs" />
+    <Compile Include="Dvehiculo.cs" />
     <Compile Include="espacio.cs">
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>
