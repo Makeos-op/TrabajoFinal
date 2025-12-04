@@ -61,6 +61,23 @@ namespace Dato
                 return "Arrendador modificado correctamente.";
             });
         }
+        public List<arrendador> MostrarArrendadores()
+        {
+            List<arrendador> listaarrendador = new List<arrendador>();
+            try
+            {
+                using (var context = new BDFEEntities()) // Crea una instancia del contexto de la base de datos
+                {
+                    context.Configuration.LazyLoadingEnabled = false;
+                    listaarrendador = context.arrendador.ToList(); // Ejecuta la funcion pasada como parametro con el contexto y retorna su resultado
+                }
+                return listaarrendador;
+            }
+            catch (Exception)
+            {
+                return listaarrendador;
+            }
+        }
     }
 
 }

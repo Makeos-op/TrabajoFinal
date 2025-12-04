@@ -61,6 +61,23 @@ namespace Dato
                 return "Conductor modificado correctamente.";
             });
         }
+        public List<conductor> MostrarConductores()
+        {
+            List<conductor> listaconductor = new List<conductor>();
+            try
+            {
+                using (var context = new BDFEEntities()) // Crea una instancia del contexto de la base de datos
+                {
+                    context.Configuration.LazyLoadingEnabled = false;
+                    listaconductor = context.conductor.ToList(); // Ejecuta la funcion pasada como parametro con el contexto y retorna su resultado
+                }
+                return listaconductor;
+            }
+            catch (Exception)
+            {
+                return listaconductor;
+            }
+        }
     }
 
 }

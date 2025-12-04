@@ -41,13 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Narrendador.cs" />
     <Compile Include="Nconductor.cs" />
     <Compile Include="Nespacio.cs" />
     <Compile Include="Nreserva.cs" />
     <Compile Include="Nvehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dato\Dato.csproj">
+      <Project>{37617bb7-6be2-429e-985c-a595f8512e8a}</Project>
+      <Name>Dato</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

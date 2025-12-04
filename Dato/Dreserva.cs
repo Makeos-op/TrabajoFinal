@@ -51,17 +51,15 @@ namespace Dato
                 var r = db.reserva.Find(R.idReserva);
                 if (r == null) return "Reserva no encontrada.";
 
-                r.idVehiculo = R.idVehiculo;
-                r.idEspacio = R.idEspacio;
                 r.fecha = R.fecha;
                 r.hora = R.hora;
                 r.cantHoras = R.cantHoras;
-                r.montoTotal = R.montoTotal;
+                r.montoTotal= r.cantHoras * r.espacio.precioHora;
 
                 db.SaveChanges();
                 return "Reserva modificada correctamente.";
             });
-        }
+        }   
     }
 
 }
