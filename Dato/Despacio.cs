@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -59,6 +60,17 @@ namespace Dato
                 db.SaveChanges();
                 return "Espacio modificado correctamente.";
             });
+        }
+        public List<espacio> MostrarEspacios()
+        {
+            List<espacio> lista = new List<espacio>();
+            EjecutarFuncion(db =>
+            {
+                db.Configuration.LazyLoadingEnabled = false;
+                lista = db.espacio.ToList();
+                return "Operación exitosa.";
+            });
+            return lista;
         }
     }
 

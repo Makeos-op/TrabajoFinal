@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7c55072fe25b468ea6eed7099331258b" Name="Diagram1" ZoomLevel="83">
+      <Diagram DiagramId="7c55072fe25b468ea6eed7099331258b" Name="Diagram1" ZoomLevel="62">
         <EntityTypeShape EntityType="ModelEF.arrendador" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelEF.conductor" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelEF.espacio" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />

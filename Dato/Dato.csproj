@@ -51,7 +51,6 @@
     <Compile Include="arrendador.cs">
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="conductor.cs">
       <DependentUpon>ModelEF.tt</DependentUpon>
     </Compile>

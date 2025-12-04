@@ -59,7 +59,7 @@ namespace Dato
                 db.SaveChanges();
                 return "Reserva modificada correctamente.";
             });
-        }   
+        }
     }
 
 }

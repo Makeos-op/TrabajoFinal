@@ -78,6 +78,14 @@ namespace Dato
                 return listaconductor;
             }
         }
+        public conductor ObtenerConductorPorDNI(string dni)
+        {
+            return MostrarConductores().FirstOrDefault(c => c.dni == dni);
+        }
+        public List<vehiculo> MostrarVehiculos(string dni)
+        {
+            return ObtenerConductorPorDNI(dni).vehiculo.ToList();
+        }
     }
 
 }

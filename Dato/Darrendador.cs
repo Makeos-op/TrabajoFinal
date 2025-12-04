@@ -63,20 +63,14 @@ namespace Dato
         }
         public List<arrendador> MostrarArrendadores()
         {
-            List<arrendador> listaarrendador = new List<arrendador>();
-            try
+            List<arrendador> lista = new List<arrendador>();
+            EjecutarFuncion(db =>
             {
-                using (var context = new BDFEEntities()) // Crea una instancia del contexto de la base de datos
-                {
-                    context.Configuration.LazyLoadingEnabled = false;
-                    listaarrendador = context.arrendador.ToList(); // Ejecuta la funcion pasada como parametro con el contexto y retorna su resultado
-                }
-                return listaarrendador;
-            }
-            catch (Exception)
-            {
-                return listaarrendador;
-            }
+                db.Configuration.LazyLoadingEnabled = false;
+                lista = db.arrendador.ToList();
+                return "Operación exitosa.";
+            });
+            return lista;
         }
     }
 
