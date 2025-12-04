@@ -48,67 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="arrendador.cs">
-      <DependentUpon>ModelEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="conductor.cs">
-      <DependentUpon>ModelEF.tt</DependentUpon>
-    </Compile>
     <Compile Include="Darrendador.cs" />
     <Compile Include="Dconductor.cs" />
     <Compile Include="Despacio.cs" />
     <Compile Include="Dreserva.cs" />
     <Compile Include="Dvehiculo.cs" />
-    <Compile Include="espacio.cs">
-      <DependentUpon>ModelEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelEF.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEF.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelEF.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelEF.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEF.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reserva.cs">
-      <DependentUpon>ModelEF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vehiculo.cs">
-      <DependentUpon>ModelEF.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="ModelEF.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelEF.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="ModelEF.edmx.diagram">
-      <DependentUpon>ModelEF.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ModelEF.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelEF.Context.cs</LastGenOutput>
-      <DependentUpon>ModelEF.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelEF.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelEF.edmx</DependentUpon>
-      <LastGenOutput>ModelEF.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
