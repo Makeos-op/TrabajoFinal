@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Dato
 {
-    public class Darrendador
+    public class DArrendador
     {
-        private string EjecutarFuncion(Func<BDFEEntities, string> funcion)
+        private string EjecutarFuncion(Func<BDFEntities, string> funcion)
         {
             try
             {
-                using (var context = new BDFEEntities())
+                using (var context = new BDFEntities())
                 {
                     return funcion(context);
                 }
@@ -23,11 +23,11 @@ namespace Dato
             }
         }
 
-        public string InsertarArrendador(arrendador A)
+        public string InsertarArrendador(Arrendador A)
         {
             return EjecutarFuncion(db =>
             {
-                db.arrendador.Add(A);
+                db.Arrendador.Add(A);
                 db.SaveChanges();
                 return "Arrendador registrado correctamente.";
             });
@@ -37,37 +37,28 @@ namespace Dato
         {
             return EjecutarFuncion(db =>
             {
-                var a = db.arrendador.Find(id);
-                db.arrendador.Remove(a);
+                var a = db.Arrendador.Find(id);
+                db.Arrendador.Remove(a);
                 db.SaveChanges();
                 return "Arrendador eliminado correctamente.";
             });
         }
 
-        public string ModificarArrendador(arrendador A)
+        public string ModificarArrendador(Arrendador A)
         {
             return EjecutarFuncion(db =>
             {
-                var a = db.arrendador.Find(A.idArrendador);
-                if (a == null) return "Arrendador no encontrado.";
-
-                a.nombre = A.nombre;
-                a.apellido = A.apellido;
-                a.dni = A.dni;
-                a.edad = A.edad;
-                a.nacionalidad = A.nacionalidad;
-
-                db.SaveChanges();
-                return "Arrendador modificado correctamente.";
+               var arr = db.Arrendador.Include(a => a.Persona).FirstOrDefault(a=>a.IdArrendador == A.IdArrendador);
+                return "Bien";
             });
         }
-        public List<arrendador> MostrarArrendadores()
+        public List<Arrendador> MostrarArrendadores()
         {
-            List<arrendador> lista = new List<arrendador>();
+            List<Arrendador> lista = new List<Arrendador>();
             EjecutarFuncion(db =>
             {
                 db.Configuration.LazyLoadingEnabled = false;
-                lista = db.arrendador.ToList();
+                lista = db.Arrendador.ToList();
                 return "Operación exitosa.";
             });
             return lista;
